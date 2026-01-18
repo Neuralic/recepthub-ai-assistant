@@ -90,8 +90,8 @@ export const HeroSection = () => {
             className="relative flex justify-center"
           >
             <div className="relative">
-              {/* Glow behind phone */}
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] scale-75" />
+              {/* Subtle blue glow behind phone - removed dark background */}
+              <div className="absolute inset-0 bg-primary/10 rounded-full blur-[100px] scale-90" />
               
               {/* Phone mockup */}
               <motion.div
@@ -99,24 +99,34 @@ export const HeroSection = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="relative z-10"
               >
-                <img
-                  src={phoneMockup}
-                  alt="ReceptHub AI WhatsApp Interface"
-                  className="w-56 md:w-64 lg:w-72 drop-shadow-2xl relative z-10"
-                />
+                <div className="relative">
+                  <img
+                    src={phoneMockup}
+                    alt="ReceptHub AI WhatsApp Interface"
+                    className="w-72 md:w-80 lg:w-96 relative z-10"
+                    style={{
+                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3))',
+                    }}
+                  />
+                </div>
               </motion.div>
 
-              {/* Floating badges */}
+              {/* Floating badges with BLUE GLOW */}
               {floatingBadges.map((badge, index) => (
                 <motion.div
                   key={badge.text}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8 + index * 0.2, duration: 0.5 }}
-                  className={`absolute floating-badge ${badge.position} z-20`}
+                  className={`absolute ${badge.position} z-20`}
+                  style={{
+                    boxShadow: '0 0 20px rgba(0, 112, 243, 0.5), 0 0 40px rgba(0, 112, 243, 0.3), 0 4px 20px rgba(0, 0, 0, 0.3)',
+                  }}
                 >
-                  <badge.icon className="w-4 h-4 text-primary" />
-                  <span className="text-foreground text-sm">{badge.text}</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-[hsl(0_0%_10%/0.9)] backdrop-blur-md border border-primary/40">
+                    <badge.icon className="w-4 h-4 text-primary" />
+                    <span className="text-foreground text-sm">{badge.text}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
