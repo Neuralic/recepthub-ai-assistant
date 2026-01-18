@@ -53,9 +53,7 @@ export const HeroSection = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Your AI Receptionist.{" "}
-              <span className="block mt-2">
-                <span className="gradient-text heading-italic">Always Available.</span>
-              </span>
+              <span className="gradient-text heading-italic">Always Available.</span>{" "}
               <span className="gradient-text heading-italic">Never Sleeps.</span>
             </h1>
             
