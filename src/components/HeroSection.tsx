@@ -102,7 +102,7 @@ export const HeroSection = () => {
                 <img
                   src={phoneMockup}
                   alt="ReceptHub AI WhatsApp Interface"
-                  className="w-56 md:w-64 lg:w-72 drop-shadow-2xl"
+                  className="w-56 md:w-64 lg:w-72 drop-shadow-2xl relative z-10"
                 />
               </motion.div>
 
@@ -113,7 +113,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8 + index * 0.2, duration: 0.5 }}
-                  className={`absolute floating-badge ${badge.position}`}
+                  className={`absolute floating-badge ${badge.position} z-20`}
                 >
                   <badge.icon className="w-4 h-4 text-primary" />
                   <span className="text-foreground text-sm">{badge.text}</span>
