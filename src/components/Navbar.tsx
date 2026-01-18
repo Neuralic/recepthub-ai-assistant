@@ -18,12 +18,12 @@ export const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl"
+      className="fixed top-0 left-0 right-0 z-50 px-4 pt-4"
     >
-      <nav className="glass-nav px-6 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="glass-nav px-6 py-4 max-w-6xl mx-auto">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2">
+          <a href="#hero" className="flex items-center gap-2 flex-shrink-0">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-primary-foreground" />
             </div>
@@ -31,12 +31,12 @@ export const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group whitespace-nowrap"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -45,8 +45,8 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button asChild className="cta-gradient text-primary-foreground font-semibold px-6">
+          <div className="hidden md:block flex-shrink-0">
+            <Button asChild className="cta-gradient text-primary-foreground font-semibold px-6 whitespace-nowrap">
               <a href="https://receptionist-hub.onrender.com/" target="_blank" rel="noopener noreferrer">
                 GET STARTED
               </a>
@@ -55,7 +55,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground p-2"
+            className="md:hidden text-foreground p-2 flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
