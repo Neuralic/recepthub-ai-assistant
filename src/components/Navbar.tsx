@@ -23,9 +23,11 @@ export const Navbar = () => {
     >
       <nav className="glass-nav px-6 py-4 max-w-6xl mx-auto">
         <div className="flex items-center justify-between gap-4">
-          {/* Logo - UPDATED WITH ROBOT */}
+          {/* Logo - UPDATED WITH ROBOT AND ROUNDED BACKGROUND */}
           <a href="#hero" className="flex items-center gap-2 flex-shrink-0">
-            <img src={logo} alt="ReceptHub" className="w-8 h-8" />
+            <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1">
+              <img src={logo} alt="ReceptHub" className="w-full h-full object-contain" />
+            </div>
             <span className="text-lg font-bold text-foreground">ReceptHub</span>
           </a>
 
