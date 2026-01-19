@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logo from "@/assets/logo.png";
 
 const footerLinks = {
   product: [
@@ -39,11 +40,11 @@ export const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-            {/* Logo & Tagline */}
+            {/* Logo & Tagline - UPDATED WITH ROBOT */}
             <div className="lg:col-span-2">
               <a href="#" className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-primary-foreground" />
+                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1">
+                  <img src={logo} alt="ReceptHub" className="w-full h-full object-contain" />
                 </div>
                 <span className="text-lg font-bold text-foreground">ReceptHub</span>
               </a>
@@ -107,10 +108,10 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom Section */}
+          {/* Bottom Section - UPDATED YEAR */}
           <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border">
             <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-              © 2024 ReceptHub. All rights reserved.
+              © 2026 ReceptHub. All rights reserved.
             </p>
 
             {/* Social Links */}
